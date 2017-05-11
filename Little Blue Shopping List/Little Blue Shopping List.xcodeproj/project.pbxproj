@@ -7,25 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D485C4B11EB2337E00787D17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D485C4B01EB2337E00787D17 /* AppDelegate.swift */; };
-		D485C4B31EB2337E00787D17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D485C4B21EB2337E00787D17 /* ViewController.swift */; };
-		D485C4B61EB2337E00787D17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D485C4B41EB2337E00787D17 /* Main.storyboard */; };
-		D485C4B81EB2337E00787D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D485C4B71EB2337E00787D17 /* Assets.xcassets */; };
-		D485C4BB1EB2337E00787D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D485C4B91EB2337E00787D17 /* LaunchScreen.storyboard */; };
+		D4E746201EC43DEC000D1E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7461F1EC43DEC000D1E92 /* AppDelegate.swift */; };
+		D4E746221EC43DEC000D1E92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E746211EC43DEC000D1E92 /* ViewController.swift */; };
+		D4E746251EC43DEC000D1E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E746231EC43DEC000D1E92 /* Main.storyboard */; };
+		D4E746281EC43DEC000D1E92 /* Little_Blue_Shopping_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4E746261EC43DEC000D1E92 /* Little_Blue_Shopping_List.xcdatamodeld */; };
+		D4E7462A1EC43DEC000D1E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E746291EC43DEC000D1E92 /* Assets.xcassets */; };
+		D4E7462D1EC43DEC000D1E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E7462B1EC43DEC000D1E92 /* LaunchScreen.storyboard */; };
+		D4E746351EC43EFA000D1E92 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E746341EC43EFA000D1E92 /* Stores.swift */; };
+		D4E746371EC43F0A000D1E92 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E746361EC43F0A000D1E92 /* Items.swift */; };
+		D4E746391EC43F75000D1E92 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E746381EC43F75000D1E92 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D485C4AD1EB2337E00787D17 /* Little Blue Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Blue Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D485C4B01EB2337E00787D17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D485C4B21EB2337E00787D17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D485C4B51EB2337E00787D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D485C4B71EB2337E00787D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D485C4BA1EB2337E00787D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D485C4BC1EB2337E00787D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4E7461C1EC43DEC000D1E92 /* Little Blue Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Blue Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4E7461F1EC43DEC000D1E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4E746211EC43DEC000D1E92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4E746241EC43DEC000D1E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4E746271EC43DEC000D1E92 /* Little_Blue_Shopping_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Little_Blue_Shopping_List.xcdatamodel; sourceTree = "<group>"; };
+		D4E746291EC43DEC000D1E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4E7462C1EC43DEC000D1E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D4E7462E1EC43DEC000D1E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4E746341EC43EFA000D1E92 /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
+		D4E746361EC43F0A000D1E92 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		D4E746381EC43F75000D1E92 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D485C4AA1EB2337E00787D17 /* Frameworks */ = {
+		D4E746191EC43DEC000D1E92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,31 +43,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D485C4A41EB2337E00787D17 = {
+		D4E746131EC43DEC000D1E92 = {
 			isa = PBXGroup;
 			children = (
-				D485C4AF1EB2337E00787D17 /* Little Blue Shopping List */,
-				D485C4AE1EB2337E00787D17 /* Products */,
+				D4E7461E1EC43DEC000D1E92 /* Little Blue Shopping List */,
+				D4E7461D1EC43DEC000D1E92 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D485C4AE1EB2337E00787D17 /* Products */ = {
+		D4E7461D1EC43DEC000D1E92 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D485C4AD1EB2337E00787D17 /* Little Blue Shopping List.app */,
+				D4E7461C1EC43DEC000D1E92 /* Little Blue Shopping List.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D485C4AF1EB2337E00787D17 /* Little Blue Shopping List */ = {
+		D4E7461E1EC43DEC000D1E92 /* Little Blue Shopping List */ = {
 			isa = PBXGroup;
 			children = (
-				D485C4B01EB2337E00787D17 /* AppDelegate.swift */,
-				D485C4B21EB2337E00787D17 /* ViewController.swift */,
-				D485C4B41EB2337E00787D17 /* Main.storyboard */,
-				D485C4B71EB2337E00787D17 /* Assets.xcassets */,
-				D485C4B91EB2337E00787D17 /* LaunchScreen.storyboard */,
-				D485C4BC1EB2337E00787D17 /* Info.plist */,
+				D4E7461F1EC43DEC000D1E92 /* AppDelegate.swift */,
+				D4E746211EC43DEC000D1E92 /* ViewController.swift */,
+				D4E746231EC43DEC000D1E92 /* Main.storyboard */,
+				D4E746291EC43DEC000D1E92 /* Assets.xcassets */,
+				D4E7462B1EC43DEC000D1E92 /* LaunchScreen.storyboard */,
+				D4E7462E1EC43DEC000D1E92 /* Info.plist */,
+				D4E746261EC43DEC000D1E92 /* Little_Blue_Shopping_List.xcdatamodeld */,
+				D4E746341EC43EFA000D1E92 /* Stores.swift */,
+				D4E746361EC43F0A000D1E92 /* Items.swift */,
+				D4E746381EC43F75000D1E92 /* Model.swift */,
 			);
 			path = "Little Blue Shopping List";
 			sourceTree = "<group>";
@@ -67,13 +79,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D485C4AC1EB2337E00787D17 /* Little Blue Shopping List */ = {
+		D4E7461B1EC43DEC000D1E92 /* Little Blue Shopping List */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D485C4BF1EB2337E00787D17 /* Build configuration list for PBXNativeTarget "Little Blue Shopping List" */;
+			buildConfigurationList = D4E746311EC43DEC000D1E92 /* Build configuration list for PBXNativeTarget "Little Blue Shopping List" */;
 			buildPhases = (
-				D485C4A91EB2337E00787D17 /* Sources */,
-				D485C4AA1EB2337E00787D17 /* Frameworks */,
-				D485C4AB1EB2337E00787D17 /* Resources */,
+				D4E746181EC43DEC000D1E92 /* Sources */,
+				D4E746191EC43DEC000D1E92 /* Frameworks */,
+				D4E7461A1EC43DEC000D1E92 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -81,27 +93,27 @@
 			);
 			name = "Little Blue Shopping List";
 			productName = "Little Blue Shopping List";
-			productReference = D485C4AD1EB2337E00787D17 /* Little Blue Shopping List.app */;
+			productReference = D4E7461C1EC43DEC000D1E92 /* Little Blue Shopping List.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D485C4A51EB2337E00787D17 /* Project object */ = {
+		D4E746141EC43DEC000D1E92 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Deakin;
 				TargetAttributes = {
-					D485C4AC1EB2337E00787D17 = {
+					D4E7461B1EC43DEC000D1E92 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 24SM6522LU;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = D485C4A81EB2337E00787D17 /* Build configuration list for PBXProject "Little Blue Shopping List" */;
+			buildConfigurationList = D4E746171EC43DEC000D1E92 /* Build configuration list for PBXProject "Little Blue Shopping List" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -109,54 +121,58 @@
 				en,
 				Base,
 			);
-			mainGroup = D485C4A41EB2337E00787D17;
-			productRefGroup = D485C4AE1EB2337E00787D17 /* Products */;
+			mainGroup = D4E746131EC43DEC000D1E92;
+			productRefGroup = D4E7461D1EC43DEC000D1E92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D485C4AC1EB2337E00787D17 /* Little Blue Shopping List */,
+				D4E7461B1EC43DEC000D1E92 /* Little Blue Shopping List */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D485C4AB1EB2337E00787D17 /* Resources */ = {
+		D4E7461A1EC43DEC000D1E92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D485C4BB1EB2337E00787D17 /* LaunchScreen.storyboard in Resources */,
-				D485C4B81EB2337E00787D17 /* Assets.xcassets in Resources */,
-				D485C4B61EB2337E00787D17 /* Main.storyboard in Resources */,
+				D4E7462D1EC43DEC000D1E92 /* LaunchScreen.storyboard in Resources */,
+				D4E7462A1EC43DEC000D1E92 /* Assets.xcassets in Resources */,
+				D4E746251EC43DEC000D1E92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D485C4A91EB2337E00787D17 /* Sources */ = {
+		D4E746181EC43DEC000D1E92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D485C4B31EB2337E00787D17 /* ViewController.swift in Sources */,
-				D485C4B11EB2337E00787D17 /* AppDelegate.swift in Sources */,
+				D4E746221EC43DEC000D1E92 /* ViewController.swift in Sources */,
+				D4E746371EC43F0A000D1E92 /* Items.swift in Sources */,
+				D4E746281EC43DEC000D1E92 /* Little_Blue_Shopping_List.xcdatamodeld in Sources */,
+				D4E746391EC43F75000D1E92 /* Model.swift in Sources */,
+				D4E746201EC43DEC000D1E92 /* AppDelegate.swift in Sources */,
+				D4E746351EC43EFA000D1E92 /* Stores.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D485C4B41EB2337E00787D17 /* Main.storyboard */ = {
+		D4E746231EC43DEC000D1E92 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D485C4B51EB2337E00787D17 /* Base */,
+				D4E746241EC43DEC000D1E92 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D485C4B91EB2337E00787D17 /* LaunchScreen.storyboard */ = {
+		D4E7462B1EC43DEC000D1E92 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D485C4BA1EB2337E00787D17 /* Base */,
+				D4E7462C1EC43DEC000D1E92 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -164,7 +180,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D485C4BD1EB2337E00787D17 /* Debug */ = {
+		D4E7462F1EC43DEC000D1E92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -215,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		D485C4BE1EB2337E00787D17 /* Release */ = {
+		D4E746301EC43DEC000D1E92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,7 +275,7 @@
 			};
 			name = Release;
 		};
-		D485C4C01EB2337E00787D17 /* Debug */ = {
+		D4E746321EC43DEC000D1E92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -272,7 +288,7 @@
 			};
 			name = Debug;
 		};
-		D485C4C11EB2337E00787D17 /* Release */ = {
+		D4E746331EC43DEC000D1E92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -288,24 +304,37 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D485C4A81EB2337E00787D17 /* Build configuration list for PBXProject "Little Blue Shopping List" */ = {
+		D4E746171EC43DEC000D1E92 /* Build configuration list for PBXProject "Little Blue Shopping List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D485C4BD1EB2337E00787D17 /* Debug */,
-				D485C4BE1EB2337E00787D17 /* Release */,
+				D4E7462F1EC43DEC000D1E92 /* Debug */,
+				D4E746301EC43DEC000D1E92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D485C4BF1EB2337E00787D17 /* Build configuration list for PBXNativeTarget "Little Blue Shopping List" */ = {
+		D4E746311EC43DEC000D1E92 /* Build configuration list for PBXNativeTarget "Little Blue Shopping List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D485C4C01EB2337E00787D17 /* Debug */,
-				D485C4C11EB2337E00787D17 /* Release */,
+				D4E746321EC43DEC000D1E92 /* Debug */,
+				D4E746331EC43DEC000D1E92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4E746261EC43DEC000D1E92 /* Little_Blue_Shopping_List.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4E746271EC43DEC000D1E92 /* Little_Blue_Shopping_List.xcdatamodel */,
+			);
+			currentVersion = D4E746271EC43DEC000D1E92 /* Little_Blue_Shopping_List.xcdatamodel */;
+			path = Little_Blue_Shopping_List.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = D485C4A51EB2337E00787D17 /* Project object */;
+	rootObject = D4E746141EC43DEC000D1E92 /* Project object */;
 }

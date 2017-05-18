@@ -1,5 +1,5 @@
 //
-//  Stores.swift
+//  Items.swift
 //  Little Blue Shopping List
 //
 //  Created by Malcolm Denning on 18/5/17.
@@ -9,6 +9,6 @@
 import UIKit
 import CoreData
 
-class Stores: NSManagedObject {
+class Items: NSManagedObject {
 
 }

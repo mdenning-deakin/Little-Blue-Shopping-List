@@ -22,16 +22,6 @@ class Utils: NSObject {
             //stores = try context.fetch(req)
             stores = try (context.fetch(Stores.fetchRequest()) as! [Stores])
         } catch let err { print(err) }
-        
-        if (stores.count == 0) {
-            var store = Stores(context: context)
-            store.name = "Big W"
-            store.location = "95 MAlop Street, Geelong, Vic"
-            
-            stores.append(store)
-            
-            try! context.save()
-        }
     }
     
     class func addStore(store: Stores) {
@@ -39,6 +29,17 @@ class Utils: NSObject {
         
         do {
             stores.append(store)
+            try context.save()
+        } catch let err { print(err) }
+    }
+    
+    class func removeStore(index: Int) {
+        let context = AppDelegate.getViewContext()
+        // Code form: http://stackoverflow.com/questions/26047013/delete-data-from-coredata-swift
+        var data: NSManagedObject = stores[index] as NSManagedObject
+        context.delete(data)
+        stores.remove(at: index)
+        do {
             try context.save()
         } catch let err { print(err) }
     }

@@ -43,12 +43,12 @@ class AddStoreViewController: UIViewController {
     }
     
     // Go back without saving data to store list
-    @IBAction func goBack(_ sender: UIButton) {
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
 
     // Save the data and go back to store list
-    @IBAction func addStore(_ sender: UIButton) {
+    @IBAction func save(_ sender: UIBarButtonItem) {
         store?.name = storeName.text
         store?.location = storeLocation.text
         

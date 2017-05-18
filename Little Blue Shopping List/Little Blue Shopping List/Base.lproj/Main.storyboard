@@ -9,13 +9,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Store-->
+        <!--Title-->
         <scene sceneID="Mgi-r6-qe2">
             <objects>
                 <tableViewController id="eia-nN-VOd" customClass="StoreTableViewController" customModule="Little_Blue_Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="i0k-Xp-NRO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storeCell" id="fj2-Z0-VK0">
@@ -32,21 +32,17 @@
                             <outlet property="delegate" destination="eia-nN-VOd" id="ZsU-nN-Lda"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Store" id="Cfo-Qs-k8T">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="zhi-HV-0yX">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XPX-CU-Utw">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="AddButton:" destination="eia-nN-VOd" eventType="touchUpInside" id="1ry-fc-mLd"/>
-                                </connections>
-                            </button>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="G0U-hv-hFE">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="LYI-B8-Mb2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="L6L-Ej-isx">
                             <connections>
-                                <segue destination="KoI-ST-Gsa" kind="show" identifier="segueAddEditStore" id="uSk-EO-iwj"/>
+                                <action selector="AddButton:" destination="eia-nN-VOd" id="ha8-yw-egJ"/>
+                                <segue destination="KoI-ST-Gsa" kind="show" identifier="segueAddEditStore" id="sqO-0i-nzW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDS-Bw-UG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,28 +88,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8z-Md-osC">
-                                <rect key="frame" x="16" y="228" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="addStore:" destination="QWg-hq-BjO" eventType="touchUpInside" id="6Ef-y8-gmt"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Store" id="EyU-tQ-pVW">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Mox-3u-GpV">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2jC-90-2lS">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="&lt; Back"/>
-                                <connections>
-                                    <action selector="goBack:" destination="QWg-hq-BjO" eventType="touchUpInside" id="5rF-nh-So0"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dHN-21-mgr">
+                            <connections>
+                                <action selector="cancel:" destination="QWg-hq-BjO" id="nd3-2m-eov"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a5C-KU-Wwb">
+                            <connections>
+                                <action selector="save:" destination="QWg-hq-BjO" id="JxT-Lj-4dI"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

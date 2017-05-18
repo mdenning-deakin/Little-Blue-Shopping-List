@@ -21,8 +21,7 @@ class StoreTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(StoreTableViewController.editButtonPressed))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,16 +46,23 @@ class StoreTableViewController: UITableViewController {
         return Utils.stores.count
     }
 
-    
+    // Load cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath)
 
-        //cell.textLabel?.text = "\(indexPath.row)"
-        //cell.textLabel?.text = "bob"
         cell.textLabel?.text = Utils.stores[indexPath.row].name
         return cell
     }
     
+    // Cell tapped
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
+    // i tapped in cell
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
+    }
 
     
     // Override to support conditional editing of the table view.
@@ -77,6 +83,18 @@ class StoreTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    // Code from http://stackoverflow.com/questions/28522490/add-a-uitableview-edit-button-to-the-toolbar-in-swift
+    func editButtonPressed(){
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        if tableView.isEditing == true{
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(StoreTableViewController.editButtonPressed))
+        }else{
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(StoreTableViewController.editButtonPressed))
+        }
+        
+        
     }
     
 

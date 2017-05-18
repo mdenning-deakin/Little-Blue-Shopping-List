@@ -21,6 +21,11 @@ class StoreTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -94,14 +99,10 @@ class StoreTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    @IBAction func unWindSegue(segue: UIStoryboardSegue) {
-        self.tableView.reloadData()
-    }
     
 
     @IBAction func AddButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueAddStore", sender: nil)
+        performSegue(withIdentifier: "segueAddEditStore", sender: nil)
     }
     
     @IBAction func EditButton(_ sender: UIButton) {

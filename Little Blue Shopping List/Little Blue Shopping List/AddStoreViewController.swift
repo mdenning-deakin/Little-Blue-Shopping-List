@@ -31,6 +31,9 @@ class AddStoreViewController: UIViewController {
         }
         else {
             newStore = true
+            store = Stores(context: AppDelegate.getViewContext())
+            store?.name = ""
+            store?.location = ""
         }
     }
 
@@ -41,17 +44,19 @@ class AddStoreViewController: UIViewController {
     
     // Go back without saving data to store list
     @IBAction func goBack(_ sender: UIButton) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
 
     // Save the data and go back to store list
     @IBAction func addStore(_ sender: UIButton) {
-        store!.name = storeName.text
-        store!.location = storeLocation.text
+        store?.name = storeName.text
+        store?.location = storeLocation.text
         
         if newStore! {
             Utils.addStore(store: store!)
         }
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*

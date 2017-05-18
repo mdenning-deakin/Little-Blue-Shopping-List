@@ -15,7 +15,7 @@ func loadStores() {
     let context = AppDelegate.getViewContext()
     
     do {
-        let req : NSFetchRequest<Stores> = Stores.fetchRequest()
+        let req : NSFetchRequest<Stores> = Stores.fetchRequest() as! NSFetchRequest<Stores>
         stores = try context.fetch(req)
     } catch let err { print(err) }
 }

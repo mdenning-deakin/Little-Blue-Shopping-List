@@ -56,12 +56,12 @@ class StoreTableViewController: UITableViewController {
     
     // Cell tapped
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        performSegue(withIdentifier: "segueItemsTable", sender: Utils.stores[indexPath.row])
     }
     
     // i tapped in cell
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "segueAddEditStore", sender: Utils.stores[indexPath.row])
     }
 
     
@@ -95,6 +95,17 @@ class StoreTableViewController: UITableViewController {
         }
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueAddEditStore" {
+            if (sender != nil) {
+                (segue.destination as! AddStoreViewController).store = (sender as! Stores)
+            }
+        }
+        else if segue.identifier == "segueItemsTable" {
+            (segue.destination as! ItemsTableViewController).store = (sender as! Stores)
+        }
     }
     
 

@@ -36,7 +36,7 @@ class Utils: NSObject {
     class func removeStore(index: Int) {
         let context = AppDelegate.getViewContext()
         // Code form: http://stackoverflow.com/questions/26047013/delete-data-from-coredata-swift
-        var data: NSManagedObject = stores[index] as NSManagedObject
+        let data: NSManagedObject = stores[index] as NSManagedObject
         context.delete(data)
         stores.remove(at: index)
         do {

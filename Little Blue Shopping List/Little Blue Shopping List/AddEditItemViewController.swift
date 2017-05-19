@@ -36,4 +36,7 @@ class AddEditItemViewController: UIViewController {
         stepper.value = Double(sender.text!)!
     }
     
+    @IBAction func dismissview(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

@@ -25,9 +25,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="328" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="pHo-Yr-LhZ" kind="show" identifier="showItemsTable" id="Waj-aF-Jm1"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -41,17 +38,20 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="L6L-Ej-isx">
                             <connections>
                                 <action selector="AddButton:" destination="eia-nN-VOd" id="ha8-yw-egJ"/>
-                                <segue destination="KoI-ST-Gsa" kind="show" identifier="segueAddEditStore" id="sqO-0i-nzW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Vie-iN-3L1" kind="show" identifier="segueItemsTable" id="vcK-F3-itr"/>
+                        <segue destination="QWg-hq-BjO" kind="show" identifier="segueAddEditStore" id="olB-Xt-PgS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDS-Bw-UG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="118"/>
+            <point key="canvasLocation" x="-82" y="182"/>
         </scene>
-        <!--Add Store-->
+        <!--Add Store View Controller-->
         <scene sceneID="fGm-lL-PX5">
             <objects>
                 <viewController id="QWg-hq-BjO" customClass="AddStoreViewController" customModule="Little_Blue_Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,18 +95,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Add Store" id="EyU-tQ-pVW">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dHN-21-mgr">
-                            <connections>
-                                <action selector="cancel:" destination="QWg-hq-BjO" id="nd3-2m-eov"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a5C-KU-Wwb">
-                            <connections>
-                                <action selector="save:" destination="QWg-hq-BjO" id="JxT-Lj-4dI"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="storeLocation" destination="GtW-0r-Nxj" id="ocS-DI-h0W"/>
@@ -115,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yc-yR-TUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1001" y="181"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nkD-6F-IY8">
@@ -126,32 +114,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="eia-nN-VOd" kind="relationship" relationship="rootViewController" id="dak-5b-dn8"/>
+                        <segue destination="eia-nN-VOd" kind="relationship" relationship="rootViewController" id="j3m-Yw-ShN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gim-Lj-Adt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1071" y="118"/>
+            <point key="canvasLocation" x="-1068" y="180"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pek-3k-TSm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KoI-ST-Gsa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rBD-sH-0CR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="QWg-hq-BjO" kind="relationship" relationship="rootViewController" id="P1I-8G-nhT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5CJ-aI-J7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="637.60000000000002" y="116.49175412293854"/>
-        </scene>
-        <!--Items-->
+        <!--Items Table View Controller-->
         <scene sceneID="M6f-TD-9sg">
             <objects>
                 <tableViewController id="Vie-iN-3L1" customClass="ItemsTableViewController" customModule="Little_Blue_Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -167,11 +137,11 @@
                             </items>
                         </toolbar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="YpB-Fg-svB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="itemCell" id="YpB-Fg-svB">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YpB-Fg-svB" id="xRv-Js-SLT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="336" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -181,18 +151,13 @@
                             <outlet property="delegate" destination="Vie-iN-3L1" id="WLK-Vc-mBq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Items" id="ZE0-QH-6VJ">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Kdc-mr-Vjm"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xsg-f8-zzX">
-                            <connections>
-                                <segue destination="6Lk-Q5-Lgc" kind="show" identifier="segueAddEditItem" id="aru-l7-nf1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <connections>
+                        <segue destination="sbK-7H-FDz" kind="show" identifier="segueAddEditItem" id="iqw-CH-LYn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVs-Iq-oc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="866"/>
+            <point key="canvasLocation" x="-82" y="988"/>
         </scene>
         <!--Add Edit Item View Controller-->
         <scene sceneID="EN1-yB-lSA">
@@ -247,10 +212,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UvJ-mJ-UWc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MHF-u9-efN"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Bue-rJ-n3g"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="itemName" destination="wOw-l0-gLN" id="Di3-7m-Ooa"/>
                         <outlet property="itemQty" destination="lo2-Dr-894" id="umO-6U-TLU"/>
@@ -259,41 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifl-KA-gkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2832.8000000000002" y="865.81709145427294"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="nPz-V4-kBO">
-            <objects>
-                <navigationController id="pHo-Yr-LhZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eiJ-ks-fzH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Vie-iN-3L1" kind="relationship" relationship="rootViewController" id="jLz-j8-WGS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="chQ-Pt-19q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-119" y="866"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hAR-7b-V42">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Lk-Q5-Lgc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DSM-aB-ftm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="sbK-7H-FDz" kind="relationship" relationship="rootViewController" id="Hrc-Jf-8Wj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ise-rm-r8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1889" y="866"/>
+            <point key="canvasLocation" x="1001" y="987"/>
         </scene>
     </scenes>
 </document>

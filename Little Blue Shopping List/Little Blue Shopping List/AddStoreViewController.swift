@@ -23,7 +23,7 @@ class AddStoreViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if (store != nil) {
             newStore = false
             storeName.text = store!.name
@@ -43,9 +43,6 @@ class AddStoreViewController: UIViewController {
     }
     
     // Go back without saving data to store list
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
 
     // Save the data and go back to store list
     @IBAction func save(_ sender: UIBarButtonItem) {

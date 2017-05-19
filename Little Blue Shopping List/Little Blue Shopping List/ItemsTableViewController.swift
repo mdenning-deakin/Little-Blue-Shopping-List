@@ -20,6 +20,12 @@ class ItemsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ItemsTableViewController.addItem))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,14 +42,14 @@ class ItemsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (store?.relationship!.count)!
+        return (store?.relationshipItems!.count)!
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
 
-        cell.textLabel?.text = indexPath.row.description
+        cell.textLabel?.text = (store?.relationshipItems?.allObjects[indexPath.row] as! Items).name
 
         return cell
     }
@@ -93,4 +99,17 @@ class ItemsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func addItem(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "segueAddEditItem", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueAddEditItem" {
+            (segue.destination as! AddEditItemViewController).store = store!
+            if (sender != nil) {
+                (segue.destination as! AddEditItemViewController).item = (sender as! Items)
+            }
+        }
+    }
 }

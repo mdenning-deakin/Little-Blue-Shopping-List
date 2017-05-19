@@ -44,6 +44,16 @@ class Utils: NSObject {
         } catch let err { print(err) }
     }
     
+    class func removeItem(item: Items) {
+        let context = AppDelegate.getViewContext()
+        // Code form: http://stackoverflow.com/questions/26047013/delete-data-from-coredata-swift
+        let data: NSManagedObject = item as NSManagedObject
+        context.delete(data)
+        do {
+            try context.save()
+        } catch let err { print(err) }
+    }
+    
     class func updateContext() {
         let context = AppDelegate.getViewContext()
         do {

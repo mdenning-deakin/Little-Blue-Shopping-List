@@ -133,7 +133,11 @@
                             <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem title="Edit" id="BsI-jN-WV4"/>
+                                <barButtonItem title="Edit" id="BsI-jN-WV4">
+                                    <connections>
+                                        <action selector="enableEditTable:" destination="Vie-iN-3L1" id="KGN-pb-NJd"/>
+                                    </connections>
+                                </barButtonItem>
                             </items>
                         </toolbar>
                         <prototypes>

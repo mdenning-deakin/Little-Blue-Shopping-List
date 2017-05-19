@@ -8,6 +8,16 @@
 
 import UIKit
 
+// Custom cells: https://www.ralfebert.de/tutorials/ios-swift-uitableviewcontroller/custom-cells/
+
+class ItemCell: UITableViewCell {
+    
+    @IBOutlet weak var itemName: UILabel!
+    @IBOutlet weak var strikethrough: UIImageView!
+    
+    
+}
+
 class ItemsTableViewController: UITableViewController {
     
     var store : Stores?
@@ -44,15 +54,44 @@ class ItemsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return (store?.relationshipItems!.count)!
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (store?.relationshipItems?.allObjects[indexPath.row] as! Items).checked {
+            (store?.relationshipItems?.allObjects[indexPath.row] as! Items).checked = false
+        }
+        else {
+            (store?.relationshipItems?.allObjects[indexPath.row] as! Items).checked = true
+        }
+        
+        Utils.updateContext()
+        
+        // Code from: http://stackoverflow.com/questions/5805503/iphone-modify-a-cell-selected-in-didselectrowatindexpath
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
+        //tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        if (tableView.isEditing) {
+            performSegue(withIdentifier: "segueAddEditItem", sender: (store?.relationshipItems?.allObjects[indexPath.row] as! Items))
+        }
+        
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
+        
+        cell.itemName?.text = String((store?.relationshipItems?.allObjects[indexPath.row] as! Items).qty) + " x " + (store?.relationshipItems?.allObjects[indexPath.row] as! Items).name!
 
-        cell.textLabel?.text = (store?.relationshipItems?.allObjects[indexPath.row] as! Items).name
-        cell.detailTextLabel?.text = "Qty: " + String((store?.relationshipItems?.allObjects[indexPath.row] as! Items).qty)
-
+        if (store?.relationshipItems?.allObjects[indexPath.row] as! Items).checked {
+            cell.strikethrough?.isHidden = false
+        }
+        else {
+            cell.strikethrough?.isHidden = true
+        }
+        
         return cell
+        
+        
     }
     
 

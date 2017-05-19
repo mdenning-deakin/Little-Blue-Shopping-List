@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fj2-Z0-VK0" id="lcu-yf-dEK">
-                                    <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -137,13 +137,30 @@
                             </items>
                         </toolbar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="itemCell" id="YpB-Fg-svB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" editingAccessoryType="detailDisclosureButton" id="YpB-Fg-svB" customClass="ItemCell" customModule="Little_Blue_Shopping_List" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YpB-Fg-svB" id="xRv-Js-SLT">
-                                    <rect key="frame" x="0.0" y="0.0" width="336" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="itemName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvT-T6-Pzp">
+                                            <rect key="frame" x="18" y="12" width="236" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="strikethrough" translatesAutoresizingMaskIntoConstraints="NO" id="7PP-dg-XyW">
+                                            <rect key="frame" x="16" y="17" width="342" height="9"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="itemName" destination="zvT-T6-Pzp" id="AP0-GO-wY2"/>
+                                    <outlet property="strikethrough" destination="7PP-dg-XyW" id="RmB-AL-7gI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -157,7 +174,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVs-Iq-oc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="988"/>
+            <point key="canvasLocation" x="-82.400000000000006" y="987.25637181409309"/>
         </scene>
         <!--Add Edit Item View Controller-->
         <scene sceneID="EN1-yB-lSA">
@@ -223,4 +240,7 @@
             <point key="canvasLocation" x="1001" y="987"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="strikethrough" width="640" height="40"/>
+    </resources>
 </document>

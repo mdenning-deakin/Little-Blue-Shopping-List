@@ -65,7 +65,9 @@ class AddEditItemViewController: UIViewController {
         item?.name = itemName.text
         item?.qty = Int16(stepper.value)
         
+        
         if newItem! {
+            item?.checked = false
             store?.addToRelationshipItems(item!)
         }
         

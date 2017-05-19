@@ -43,4 +43,11 @@ class Utils: NSObject {
             try context.save()
         } catch let err { print(err) }
     }
+    
+    class func editStore() {
+        let context = AppDelegate.getViewContext()
+        do {
+            try context.save()
+        } catch let err { print(err) }
+    }
 }

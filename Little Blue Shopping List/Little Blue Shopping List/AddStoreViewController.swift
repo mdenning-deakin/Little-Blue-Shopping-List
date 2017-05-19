@@ -19,8 +19,9 @@ class AddStoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.plain, target: self, action: #selector(AddStoreViewController.save))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,12 +29,16 @@ class AddStoreViewController: UIViewController {
             newStore = false
             storeName.text = store!.name
             storeLocation.text = store!.location
+            
+            navigationItem.title = "Edit"
         }
         else {
             newStore = true
             store = Stores(context: AppDelegate.getViewContext())
             store?.name = ""
             store?.location = ""
+            
+            navigationItem.title = "Add Store"
         }
     }
 
@@ -51,9 +56,11 @@ class AddStoreViewController: UIViewController {
         
         if newStore! {
             Utils.addStore(store: store!)
+        } else {
+            Utils.editStore()
         }
         
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*

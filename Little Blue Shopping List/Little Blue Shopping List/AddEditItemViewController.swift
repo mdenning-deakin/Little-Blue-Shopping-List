@@ -69,6 +69,8 @@ class AddEditItemViewController: UIViewController {
             store?.addToRelationshipItems(item!)
         }
         
+        Utils.updateContext()
+        
         self.navigationController?.popViewController(animated: true)
     }
 }

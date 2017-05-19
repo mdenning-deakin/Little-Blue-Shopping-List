@@ -50,6 +50,7 @@ class ItemsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
 
         cell.textLabel?.text = (store?.relationshipItems?.allObjects[indexPath.row] as! Items).name
+        cell.detailTextLabel?.text = "Qty: " + String((store?.relationshipItems?.allObjects[indexPath.row] as! Items).qty)
 
         return cell
     }

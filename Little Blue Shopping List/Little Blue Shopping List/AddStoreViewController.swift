@@ -57,7 +57,7 @@ class AddStoreViewController: UIViewController {
         if newStore! {
             Utils.addStore(store: store!)
         } else {
-            Utils.editStore()
+            Utils.updateContext()
         }
         
         self.navigationController?.popViewController(animated: true)

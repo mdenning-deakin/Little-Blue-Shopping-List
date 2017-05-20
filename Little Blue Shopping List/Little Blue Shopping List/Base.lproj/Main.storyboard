@@ -9,6 +9,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Store Map View Controller-->
+        <scene sceneID="xTe-cH-VRt">
+            <objects>
+                <viewController id="Vip-3q-goV" customClass="StoreMapViewController" customModule="Little_Blue_Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rqt-zA-72P"/>
+                        <viewControllerLayoutGuide type="bottom" id="4xe-6I-abp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eI8-Un-4ac">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIi-cN-zUI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="storeMap" destination="aIi-cN-zUI" id="GWG-jw-vwE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9IL-JS-klJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86" y="-546"/>
+        </scene>
         <!--Stores-->
         <scene sceneID="Mgi-r6-qe2">
             <objects>
@@ -18,11 +45,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="storeCell" editingAccessoryType="disclosureIndicator" id="fj2-Z0-VK0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="storeCell" editingAccessoryType="detailDisclosureButton" id="fj2-Z0-VK0">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fj2-Z0-VK0" id="lcu-yf-dEK">
-                                    <rect key="frame" x="0.0" y="0.0" width="328" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -45,6 +72,7 @@
                     <connections>
                         <segue destination="Vie-iN-3L1" kind="show" identifier="segueItemsTable" id="vcK-F3-itr"/>
                         <segue destination="QWg-hq-BjO" kind="show" identifier="segueAddEditStore" id="olB-Xt-PgS"/>
+                        <segue destination="Vip-3q-goV" kind="show" identifier="segueMapView" id="Hbs-Vp-1Lz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDS-Bw-UG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,7 +184,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="strikethrough" translatesAutoresizingMaskIntoConstraints="NO" id="7PP-dg-XyW">
-                                            <rect key="frame" x="16" y="17" width="342" height="9"/>
+                                            <rect key="frame" x="16" y="16" width="342" height="9"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>

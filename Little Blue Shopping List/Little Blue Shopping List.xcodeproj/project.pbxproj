@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4538C691ED0110B0045DF1A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4538C681ED0110B0045DF1A /* MapKit.framework */; };
+		D4538C6D1ED0137F0045DF1A /* StoreMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4538C6C1ED0137F0045DF1A /* StoreMapViewController.swift */; };
 		D480830F1ECB005D004AA6B1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D480830E1ECB005D004AA6B1 /* Utils.swift */; };
 		D48083151ECB187B004AA6B1 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48083141ECB187B004AA6B1 /* AddStoreViewController.swift */; };
 		D49DAA7E1ECDAE5100C5A4E4 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49DAA7D1ECDAE5100C5A4E4 /* Stores.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4538C681ED0110B0045DF1A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D4538C6C1ED0137F0045DF1A /* StoreMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreMapViewController.swift; sourceTree = "<group>"; };
 		D480830E1ECB005D004AA6B1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D48083141ECB187B004AA6B1 /* AddStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		D49DAA7D1ECDAE5100C5A4E4 /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
@@ -43,17 +47,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4538C691ED0110B0045DF1A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4538C671ED0110B0045DF1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4538C681ED0110B0045DF1A /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D4E746131EC43DEC000D1E92 = {
 			isa = PBXGroup;
 			children = (
 				D4E7461E1EC43DEC000D1E92 /* Little Blue Shopping List */,
 				D4E7461D1EC43DEC000D1E92 /* Products */,
+				D4538C671ED0110B0045DF1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +95,7 @@
 				D48083141ECB187B004AA6B1 /* AddStoreViewController.swift */,
 				D49DAA831ECDC31C00C5A4E4 /* ItemsTableViewController.swift */,
 				D49DAA811ECDC30100C5A4E4 /* AddEditItemViewController.swift */,
+				D4538C6C1ED0137F0045DF1A /* StoreMapViewController.swift */,
 			);
 			path = "Little Blue Shopping List";
 			sourceTree = "<group>";
@@ -119,6 +134,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 24SM6522LU;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -166,6 +186,7 @@
 				D48083151ECB187B004AA6B1 /* AddStoreViewController.swift in Sources */,
 				D4E746201EC43DEC000D1E92 /* AppDelegate.swift in Sources */,
 				D4E7463B1EC46B56000D1E92 /* StoreTableViewController.swift in Sources */,
+				D4538C6D1ED0137F0045DF1A /* StoreMapViewController.swift in Sources */,
 				D49DAA821ECDC30100C5A4E4 /* AddEditItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,15 +34,17 @@ class StoreMapViewController: UIViewController, MKMapViewDelegate {
 
         // Do any additional setup after loading the view.
         
-        //self.storeMap.delegate = self as! MKMapViewDelegate
-        
+        // Set ViewController as delegate
         self.storeMap.delegate = self
         
+        // Set the center of the map to be the users location
         storeMap.setCenter(storeMap.userLocation.coordinate, animated: true)
         
         if store != nil {
+            // Set the view title to be the store name
             navigationItem.title = store?.name
             
+            // Set a pin at the  location of the store with the name and location
             CLGeocoder().geocodeAddressString((store?.location)!, completionHandler: {
                 (placemark, error) in
                 let triplocation = placemark![0].location?.coordinate

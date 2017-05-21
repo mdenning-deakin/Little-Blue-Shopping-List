@@ -11,6 +11,8 @@ import UIKit
 
 class AddStoreViewController: UIViewController {
     
+    // Variables
+    
     var store : Stores?
     var newStore : Bool?
     
@@ -21,11 +23,13 @@ class AddStoreViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        // Sets the navigation bar button value
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.plain, target: self, action: #selector(AddStoreViewController.save))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if (store != nil) {
+            // Sets the text fields to reflect the data of the passed in store
             newStore = false
             storeName.text = store!.name
             storeLocation.text = store!.location
@@ -33,6 +37,7 @@ class AddStoreViewController: UIViewController {
             navigationItem.title = "Edit"
         }
         else {
+            // Creates a new store
             newStore = true
             store = Stores(context: AppDelegate.getViewContext())
             store?.name = ""
@@ -46,20 +51,23 @@ class AddStoreViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // Go back without saving data to store list
 
     // Save the data and go back to store list
     @IBAction func save(_ sender: UIBarButtonItem) {
+        // Store the text field data in the store object
         store?.name = storeName.text
         store?.location = storeLocation.text
         
+        // Stores the data
         if newStore! {
+            // Adds a new object
             Utils.addStore(store: store!)
         } else {
+            // Saves the context
             Utils.updateContext()
         }
         
+        // Go back to the view controller which created this view
         self.navigationController?.popViewController(animated: true)
     }
     

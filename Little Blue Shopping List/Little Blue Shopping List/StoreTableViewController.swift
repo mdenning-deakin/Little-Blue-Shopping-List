@@ -21,13 +21,15 @@ class StoreTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // Sets the navigation bar button value and action on tap
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(StoreTableViewController.editButtonPressed))
         
     }
     
+    // Ran when the view is about to appear to the user
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Reloads the table data
         tableView.reloadData()
     }
 
@@ -37,32 +39,38 @@ class StoreTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    // Sets the number of sections in the table
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
+    // Sets the number of rows in the table
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return Utils.stores.count
     }
 
-    // Load cell
+    // Loads cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Create cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath)
 
+        // Set cell text from store name
         cell.textLabel?.text = Utils.stores[indexPath.row].name
+        
         return cell
     }
     
     // Cell tapped
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Show ItemsTableViewController with row store as the passed variable
         performSegue(withIdentifier: "segueItemsTable", sender: Utils.stores[indexPath.row])
     }
     
-    // i tapped in cell
+    // i accessory tapped in cell
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        // If editing is enabled, show AddEditStoreViewController, otherwise shwo StoreMapViewViewController
         if (tableView.isEditing) {
             performSegue(withIdentifier: "segueAddEditStore", sender: Utils.stores[indexPath.row])
         }
@@ -85,36 +93,64 @@ class StoreTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            Utils.removeStore(index: indexPath.row)
-            
-            self.tableView.reloadData()
+            deleteRow(index: indexPath.row)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     
+    // Custom on swipe actions for cells
+    // reference: http://stackoverflow.com/questions/32004557/swipe-able-table-view-cell-in-ios-9
+    override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        // Edit button details and action when tapped
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in self.performSegue(withIdentifier: "segueAddEditStore", sender: Utils.stores[index.row]) }
+        
+        // delete button details and action when tapped
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in self.deleteRow(index: index.row) }
+        
+        // Sets delete button background color
+        delete.backgroundColor = UIColor.red
+        
+        // Return the buttons in order from right to left
+        return [delete, edit]
+    }
+    
+    // function ran when delete edit action is tapped
+    func deleteRow(index: Int) {
+        Utils.removeStore(index: index)
+        self.tableView.reloadData()
+    }
+    
+    // Function ran when edit action button is tapped
     // Code from http://stackoverflow.com/questions/28522490/add-a-uitableview-edit-button-to-the-toolbar-in-swift
     func editButtonPressed(){
+        // Set the table to be in editing mode
         tableView.setEditing(!tableView.isEditing, animated: true)
         if tableView.isEditing == true{
+            // Change navigation button text
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(StoreTableViewController.editButtonPressed))
         }else{
+            // Change navigation button text
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(StoreTableViewController.editButtonPressed))
         }
         
         
     }
     
+    // Ran just before a segue is performed
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueAddEditStore" {
             if (sender != nil) {
+                // Set store value in AddStoreViewController
                 (segue.destination as! AddStoreViewController).store = (sender as! Stores)
             }
         }
         else if segue.identifier == "segueItemsTable" {
+            // Set store value in ItemsTableViewController
             (segue.destination as! ItemsTableViewController).store = (sender as! Stores)
         }
         else if segue.identifier == "segueMapView" {
+            // Set store value in StoreMapViewController
             (segue.destination as! StoreMapViewController).store = (sender as! Stores)
         }
     }
@@ -145,7 +181,7 @@ class StoreTableViewController: UITableViewController {
     }
     */
     
-
+    // Ran when Add button is tapped
     @IBAction func AddButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "segueAddEditStore", sender: nil)
     }
